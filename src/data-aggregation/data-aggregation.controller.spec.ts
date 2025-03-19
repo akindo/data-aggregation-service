@@ -18,7 +18,11 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(dataAggregationController.getHello()).toBe('Hello World!');
+      expect(
+        dataAggregationController.getAggregatedData({ userId: '074092' }),
+      ).toBe(
+        '{"id":"074092","balance":-40.8,"earned":1.2,"spent":12,"payOut":30}⏎',
+      );
     });
   });
 });
